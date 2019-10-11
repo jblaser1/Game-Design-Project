@@ -1,0 +1,44 @@
+Tech Specs
+
+Ok so in order to make the room and the stairs it shouldn't be too hard
+basically, you would make objects that are on and off screen and they
+can only be seen as the character moves to the right or left
+
+the character is a variable and as he moves, he stays in the center of the
+screen and everything else moves around him. he is a variable and the spawning
+rooms and walls are variables that translate left and right as you press a and d.
+
+characters functions are
+jump which translates him up and back down
+run left, run right which moves the walls and ninjas left and right
+sprint left and sprint right that moves everything faster to the left
+  and right
+
+ninjas coming at you will also be variables that are spawned an increasing
+amount based on the spawn level using a loop.
+
+ninjas functions are:
+hit which swipes a sword and if it hits it decreases health
+    this only runs if it is close to the center characters
+run forward which runs forward
+run back it runs back
+jump makes the dude jump u know
+almost always runs forward but sometimes jumps and runs back
+    set through a loop that is different based on the level
+
+the health bar is a variable that is above each ninja
+
+ninjas movements are sometimes random but are mostly targeted towards the main
+player. they will be looped to create movements and increasing jumps and speed
+at higher levels.
+
+the room platforms are just lines that will be set as a constraint so
+that the character cant go through it.
+
+jumping is just moving the main character up and down with a translation
+
+the images are put in with sprites.
+
+health bars can be lines with fill in bars that can decrease with the percent
+of damage that it does. so the bar is just filled with a designated percent
+that will go down if it takes damage. damage taken is just a function
