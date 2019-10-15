@@ -9,13 +9,15 @@ screen and everything else moves around him. he is a variable and the spawning
 rooms and walls are variables that translate left and right as you press a and d.
 
 characters functions are
-jump which translates him up and back down
+jump which translates him up and back down. only he moves on the jump
 run left, run right which moves the walls and ninjas left and right
 sprint left and sprint right that moves everything faster to the left
   and right
+attack which swipes his sword
+  anything within 10 pixels or whatever will take damage
 
 ninjas coming at you will also be variables that are spawned an increasing
-amount based on the spawn level using a loop.
+amount based on the spawn level using a loop. Ninjas have health variable
 
 ninjas functions are:
 hit which swipes a sword and if it hits it decreases health
@@ -26,16 +28,16 @@ jump makes the dude jump u know
 almost always runs forward but sometimes jumps and runs back
     set through a loop that is different based on the level
 
-the health bar is a variable that is above each ninja
+the health bar is a sprite that is above each ninja
 
 ninjas movements are sometimes random but are mostly targeted towards the main
 player. they will be looped to create movements and increasing jumps and speed
-at higher levels.
+at higher levels. If ninjas run into obstacles they jump.
 
 the room platforms are just lines that will be set as a constraint so
 that the character cant go through it.
 
-jumping is just moving the main character up and down with a translation
+each level has programable obstacles that are up to the designer
 
 the images are put in with sprites.
 
