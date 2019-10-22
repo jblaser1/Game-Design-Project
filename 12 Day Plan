@@ -2,28 +2,42 @@
 
 priority list
 
+read the readME
+
 1. make the main object guy w sword
+    readme 5-6
 2. code his movements
   a. run, jump, sprint
+      11-17 tech spec
 3. code Ninjas
+      5-6 readME
 4. code their movements
   a. jump they see obstacles
+    22-29 tech Spec
+    33-35 tech spec
 5. code walls and obstacles
   a. with restrictions
   b. varying size
+  37-38 tech spec
 6. health bars and health variable
+  31 tech spec
 7. attack functions
 8. spawn rate of ninjas
+  readMe 7-9
 9. add sprites
+ readMe
 10. multiplayer capability
   a. option for 2 player button
   b. add a fighter w health bar and all the variables
       i. kill ninja spawn
+  readMe 10-11
 11. level design
   a. specific boss design
     i. boss movements and health
+    readMe 7-9
 12. extra stuff (animations)
   a. sword swiping animation
+  readMe 10-11
 
 
 12 day plan
