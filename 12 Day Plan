@@ -1,0 +1,40 @@
+12 day plan
+
+priority list
+
+1. make the main object guy w sword
+2. code his movements
+  a. run, jump, sprint
+3. code Ninjas
+4. code their movements
+  a. jump they see obstacles
+5. code walls and obstacles
+  a. with restrictions
+  b. varying size
+6. health bars and health variable
+7. attack functions
+8. spawn rate of ninjas
+9. add sprites
+10. multiplayer capability
+  a. option for 2 player button
+  b. add a fighter w health bar and all the variables
+      i. kill ninja spawn
+11. level design
+  a. specific boss design
+    i. boss movements and health
+12. extra stuff (animations)
+  a. sword swiping animation
+
+
+12 day plan
+
+day 1 : 1-2
+day 2 : 3-4
+day 3 : 5
+day 4 : 6
+day 5 : 7
+day 6-7 : 8
+day 8 : 9
+day 10-13 : 10
+day 14 : 11
+day 15-16: 12
