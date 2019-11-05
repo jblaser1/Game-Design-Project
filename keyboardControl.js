@@ -13,9 +13,9 @@ var yy = 182;
 
 rectangle = {
 
-  height:32,
+  height:100,
   jumping:true,
-  width:32,
+  width:100,
   x:284, // center of the canvas
   x_velocity:0,
   y:0,
@@ -78,10 +78,10 @@ loop = function() {
   rectangle.y_velocity *= 0.9;// friction
 
   // if rectangle is falling below floor line
-  if (rectangle.y > 300 - 16 - 32) {
+  if (rectangle.y > 300 - 16 - 100) {
 
     rectangle.jumping = false;
-    rectangle.y = 300 - 16 - 32;
+    rectangle.y = 300 - 16 - 100;
     rectangle.y_velocity = 0;
 
   }
@@ -99,7 +99,7 @@ loop = function() {
 
   context.fillStyle = "#ffff";
   context.fillRect(0, 0, 600, 300);// x, y, width, height
-  context.fillStyle = "#ff0000";// hex for red
+  context.fillStyle = "#ffff";// hex for red
   context.beginPath();
   context.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
   context.fill();
@@ -109,7 +109,7 @@ loop = function() {
   context.moveTo(0, 284);
   context.lineTo(600, 284);
   context.stroke();
-  context.drawImage(standingNinja, xx, yy, 100, 100);
+  context.drawImage(standingNinja, rectangle.x, rectangle.y, 100, 100);
 
   // call update when the browser is ready to draw again
   window.requestAnimationFrame(loop);
