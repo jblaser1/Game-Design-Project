@@ -127,10 +127,10 @@ loop = function() {
     rectangle.y_velocity = 0;
   }
   // if rectangle is going off the left of the screen
-  if (rectangle.x < -32) {
-    rectangle.x = 600;
-  } else if (rectangle.x > 600) {// if rectangle goes past right boundary
-    rectangle.x = -32;
+  if (rectangle.x < 60) {
+    rectangle.x = 60;
+  } else if (rectangle.x > 490) {// if rectangle goes past right boundary
+    rectangle.x = 490;
   }
 
   ////////////////
@@ -183,6 +183,8 @@ loop = function() {
   context.drawImage(background,0,0);
   context.drawImage(standingNinja, rectangle.x, rectangle.y, 50, 100);
   context.drawImage(ninja, rectangleTwo.x, rectangleTwo.y, 50, 100);
+
+///THE NINJA STILL IS CONTROLLED BY WASD, BUT IT IS BEING CREATED. INSTEAD, AN "AI" SHOULD FOLLOW PLAYER
 
 
   // call update when the browser is ready to draw again
