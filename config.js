@@ -6,13 +6,15 @@ var GAME = {
 
 var RECTANGLE = {
   height:0,
-  jumping:true,
+  jumping:false,
   width:0,
   x:0, // center of the canvas
-  x_velocity:0,
+  velX:0,
   y:0,
-  y_velocity:0,
-  floor:300-16-100
+  velY:0,
+  speed: 3,
+  grounded : true,
+  health : 0
 };
 
 var RECTANGLETWO = {
@@ -22,13 +24,8 @@ var RECTANGLETWO = {
     x:0, // center of the canvas
     x_velocity:0,
     y:0,
-    y_velocity:0
+    y_velocity:0,
+    health : 0
 };
 
-var OBSTACLE =
-{
-  x : [],
-  y : [],
-  width : [],
-  numOfObstacles : 0
-};
+var OBSTACLE = [];

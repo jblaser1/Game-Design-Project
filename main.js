@@ -1,8 +1,6 @@
 var canvas = document.getElementById('mainCanvas');
 var context = canvas.getContext('2d');
 
-var standingNinja = new Image();
-standingNinja.src = '/assets/Samurai.png';
 var ninja = new Image();
 ninja.src = '/assets/Samurai.png';
 
@@ -12,23 +10,36 @@ background.src = '/assets/GameBackground.png'
 var xx = 250;
 var yy = 182;
 
-function drawObstacles(){
-  for(var i = 0; i < OBSTACLE.numOfObstacles; i++){
-    context.beginPath();
-    context.moveTo(OBSTACLE.x[i], OBSTACLE.y[i]);
-    context.lineTo(OBSTACLE.x[i] + OBSTACLE.width[i], OBSTACLE.y[i]);
-    context.stroke();
-  }
+function drawHealthBar(){
+  context.beginPath();
+  context.fillStyle="#FF0000";
+  context.rect(29, 19, 72, 25/2 + 2);
+  context.stroke();
+  context.fillRect(30,20,(RECTANGLE.health/100)*70,25/2);
+  context.fillRect(600 - 30 - 70, 20, RECTANGLETWO.health/100 * 70, 25/2);
+  context.rect(600 - 30 - 71, 19, 72, 25/2 + 2);
+  context.stroke();
+  context.fillStyle = "white";
+  context.font = "8pt sans-serif";
+  context.fillText("Player 1: " + RECTANGLE.health, 33, 20 + 25/3 + 1);
+  context.fillText("Player 2: " + RECTANGLETWO.health, 600-30-67, 20 + 25/3 + 1);
 }
+function drawObstacles(){
+  for(var i = 0; i < OBSTACLE.length; i++){
+    context.beginPath();
+    context.fillRect(OBSTACLE[i].x, OBSTACLE[i].y, OBSTACLE[i].width, OBSTACLE[i].height);
+  }
+
+}
+
 function loop(){
 /////PLAYER
   if(GAME.started)
   {
-    HandleRectObstacleMovement();
+    context.clearRect(0, 0, 600, 300);
+    drawObstacles();
     HandleFirstPlayerMovement();
     HandleSecondPlayerMovement();
-
-    context.clearRect(0, 0, 600, 300);
     //context.fillStyle = "#ffff";
     /*
     context.fillRect(0, 0, 600, 300);// x, y, width, height
@@ -44,9 +55,9 @@ function loop(){
     context.stroke();
     */
     context.drawImage(background,0,0);
-    context.drawImage(standingNinja, RECTANGLE.x, RECTANGLE.y, 50, 100);
+    context.drawImage(ninja, RECTANGLE.x, RECTANGLE.y, 50, 100);
     context.drawImage(ninja, RECTANGLETWO.x, RECTANGLETWO.y, 50, 100);
-    drawObstacles();
+    drawHealthBar();
   }
   else{
     context.font = "30px Arial";
