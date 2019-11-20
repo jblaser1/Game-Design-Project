@@ -3,7 +3,8 @@ var context = canvas.getContext('2d');
 
 var ninja = new Image();
 ninja.src = '/assets/Samurai.png';
-
+var standingNinja = new Image();
+standingNinja.src = '/assets/Samurai.png';
 var background = new Image()
 background.src = '/assets/GameBackground.png'
 
@@ -27,36 +28,26 @@ function drawHealthBar(){
 function drawObstacles(){
   for(var i = 0; i < OBSTACLE.length; i++){
     context.beginPath();
-    context.fillRect(OBSTACLE[i].x, OBSTACLE[i].y, OBSTACLE[i].width, OBSTACLE[i].height);
+    context.rect(OBSTACLE[i].x, OBSTACLE[i].y, OBSTACLE[i].width, 3);
+    context.fillStyle = "black";
+    context.fill();
   }
-
 }
 
 function loop(){
 /////PLAYER
   if(GAME.started)
   {
-    context.clearRect(0, 0, 600, 300);
-    drawObstacles();
     HandleFirstPlayerMovement();
     HandleSecondPlayerMovement();
+
+    context.clearRect(0, 0, 600, 300);
     //context.fillStyle = "#ffff";
-    /*
-    context.fillRect(0, 0, 600, 300);// x, y, width, height
-    context.fillStyle = "#ffff";// hex for red
-    context.beginPath();
-    context.rect(RECTANGLE.x, RECTANGLE.y, RECTANGLE.width, RECTANGLE.height);
-    context.fill();
-    context.strokeStyle = "#202830";
-    context.lineWidth = 4;
-    context.beginPath();
-    context.moveTo(0, 284);
-    context.lineTo(600, 284);
-    context.stroke();
-    */
+
     context.drawImage(background,0,0);
-    context.drawImage(ninja, RECTANGLE.x, RECTANGLE.y, 50, 100);
+    context.drawImage(standingNinja, RECTANGLE.x, RECTANGLE.y, 50, 100);
     context.drawImage(ninja, RECTANGLETWO.x, RECTANGLETWO.y, 50, 100);
+    drawObstacles();
     drawHealthBar();
   }
   else{
