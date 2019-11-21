@@ -1,10 +1,10 @@
 function initializeRectangles(){
-  RECTANGLE.height = 100;
-  RECTANGLE.width = 100;
+  RECTANGLE.height = 250;
+  RECTANGLE.width = 125;
   RECTANGLE.x = 400;
   RECTANGLE.y = 200;
-  RECTANGLETWO.height = 100;
-  RECTANGLETWO.width = 100;
+  RECTANGLETWO.height = 250;
+  RECTANGLETWO.width = 125;
   RECTANGLETWO.x = 400;
   RECTANGLETWO.y = 200;
   RECTANGLE.health = 100;
@@ -64,9 +64,9 @@ function HandleFirstPlayerMovement(){
   RECTANGLE.velX *= 0.9;// friction
   RECTANGLE.velY *= 0.9;// friction
 
-  if (RECTANGLE.y > 300 - 16 - 100) {
+  if (RECTANGLE.y > 500 - 16 - 170) {
     RECTANGLE.jumping = false;
-    RECTANGLE.y = 300 - 16 - 100
+    RECTANGLE.y = 500 - 16 - 170
     RECTANGLE.velY = 0;
   }
 
@@ -99,16 +99,16 @@ function HandleSecondPlayerMovement (){
     RECTANGLETWO.y_velocity *= 0.9;// friction
 
     // if rectangleTwo is falling below floor line
-    if (RECTANGLETWO.y > 300 - 16 - 100) {
+    if (RECTANGLETWO.y > 500 - 16 - 170) {
       RECTANGLETWO.jumping = false;
-      RECTANGLETWO.y = 300 - 16 - 100
+      RECTANGLETWO.y = 500 - 16 - 170
       RECTANGLETWO.y_velocity = 0;
     }
 
     // if rectangleTwo is going off the left of the screen
     if (RECTANGLETWO.x < -32) {
-      RECTANGLETWO.x = 600;
-    } else if (RECTANGLETWO.x > 600) {// if rectangleTwo goes past right boundary
+      RECTANGLETWO.x = 1000;
+    } else if (RECTANGLETWO.x > 1000) {// if rectangleTwo goes past right boundary
       RECTANGLETWO.x = -32;
     }
   }
@@ -132,15 +132,15 @@ function HandleSecondPlayerMovement (){
     RECTANGLETWO.y_velocity *= 0.9;// friction
 
     // if rectangleTwo is falling below floor line
-    if (RECTANGLETWO.y > 300 - 16 - 100) {
+    if (RECTANGLETWO.y > 500 - 16 - 170) {
       RECTANGLETWO.jumping = false;
-      RECTANGLETWO.y = 300 - 16 - 100
+      RECTANGLETWO.y = 500 - 16 - 170
       RECTANGLETWO.y_velocity = 0;
     }
     // if rectangleTwo is going off the left of the screen
     if (RECTANGLETWO.x < -32) {
-      RECTANGLETWO.x = 600;
-    } else if (RECTANGLETWO.x > 600) {// if rectangleTwo goes past right boundary
+      RECTANGLETWO.x = 1000;
+    } else if (RECTANGLETWO.x > 1000) {// if rectangleTwo goes past right boundary
       RECTANGLETWO.x = -32;
     }
   }

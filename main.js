@@ -17,13 +17,13 @@ function drawHealthBar(){
   context.rect(29, 19, 72, 25/2 + 2);
   context.stroke();
   context.fillRect(30,20,(RECTANGLE.health/100)*70,25/2);
-  context.fillRect(600 - 30 - 70, 20, RECTANGLETWO.health/100 * 70, 25/2);
-  context.rect(600 - 30 - 71, 19, 72, 25/2 + 2);
+  context.fillRect(1000 - 30 - 70, 20, RECTANGLETWO.health/100 * 70, 25/2);
+  context.rect(1000 - 30 - 71, 19, 72, 25/2 + 2);
   context.stroke();
   context.fillStyle = "white";
   context.font = "8pt sans-serif";
   context.fillText("Player 1: " + RECTANGLE.health, 33, 20 + 25/3 + 1);
-  context.fillText("Player 2: " + RECTANGLETWO.health, 600-30-67, 20 + 25/3 + 1);
+  context.fillText("Player 2: " + RECTANGLETWO.health, 1000-30-67, 20 + 25/3 + 1);
 }
 function drawObstacles(){
   for(var i = 0; i < OBSTACLE.length; i++){
@@ -41,12 +41,12 @@ function loop(){
     HandleFirstPlayerMovement();
     HandleSecondPlayerMovement();
 
-    context.clearRect(0, 0, 600, 300);
+    context.clearRect(0, 0, 1000, 500);
     //context.fillStyle = "#ffff";
 
     context.drawImage(background,0,0);
-    context.drawImage(standingNinja, RECTANGLE.x, RECTANGLE.y, 50, 100);
-    context.drawImage(ninja, RECTANGLETWO.x, RECTANGLETWO.y, 50, 100);
+    context.drawImage(standingNinja, RECTANGLE.x, RECTANGLE.y, 80, 160);
+    context.drawImage(ninja, RECTANGLETWO.x, RECTANGLETWO.y, 80, 160);
     drawObstacles();
     drawHealthBar();
   }
