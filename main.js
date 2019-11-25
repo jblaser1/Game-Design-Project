@@ -62,7 +62,9 @@ function loop(){
     drawHealthBar();
     context.font = "20px Arial";
     context.fillText("Score: " + score, 800, 75);
-    context.fillText("WASD - N to attack", 500, 75);
+    context.fillText("WASD - N to attack", 400, 75);
+    context.fillText("Can only attack to the right", 380, 100);
+    context.fillText("'It's not a bug, its a feature'", 380, 120);
     RenderNinja(context);
   }
   else{
