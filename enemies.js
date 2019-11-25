@@ -67,7 +67,8 @@ function handleNinjaAnimation() {
     }
     //this next part exists to check if the Ninja just moved into the same space as another Ninja or player, and undoes the move if so.
     var attacked = false;
-    if (Math.abs(NINJAS[i].x - RECTANGLE.x) < 20){
+    if (Math.abs(NINJAS[i].x - RECTANGLE.x) < 20 && RECTANGLE.y == 314){
+      
       attacked = true;
     }
     if (attacked) {
