@@ -28,4 +28,14 @@ var RECTANGLETWO = {
     health : 0
 };
 
+var PLATFORMS = [
+{xpt: 130, ypt: 380, xl: 40, yl: 40},
+{xpt: 170, ypt: 380, xl: 40, yl: 40},
+{xpt: 200, ypt: 380, xl: 40, yl: 40},
+{xpt: 200, ypt: 230, xl: 60, yl: 30},
+];
+
+
+var NINJAS = [];
+
 var OBSTACLE = [];

@@ -48,7 +48,7 @@ function colCheck(shapeA, shapeB) {
 
 function HandleFirstPlayerMovement(){
   if (controller.up && RECTANGLE.jumping == false) {
-    RECTANGLE.velY -= 20;
+    RECTANGLE.velY -= 25;
     RECTANGLE.jumping = true;
   }
   if (controller.left) {
@@ -71,12 +71,78 @@ function HandleFirstPlayerMovement(){
   }
 
   // if rectangle is going off the left of the screen
-  if (RECTANGLE.x < 60) {
-    RECTANGLE.x = 60;
-  } else if (RECTANGLE.x > 490) {// if rectangle goes past right boundary
-    RECTANGLE.x = 490;
+  if (RECTANGLE.x < 120) {
+    RECTANGLE.x = 120;
+  } else if (RECTANGLE.x > 820) {// if rectangle goes past right boundary
+    RECTANGLE.x = 820;
   }
 }
+
+function isOnAPlatform() {
+  var b = -100;
+  for (const plat of PLATFORMS) {
+    if (CAT.RECTANGLE.x +CAT.RECTANGLE.size > plat.xpt && CAT.RECTANGLE.x < plat.xpt + plat.xl && CAT.RECTANGLE.y + CAT.RECTANGLE.size >= plat.ypt && CAT.RECTANGLE.y + CAT.RECTANGLE.size <= plat.ypt + 10) {
+      b = plat.ypt;
+    }
+  }
+  return b;
+} //detects if the cat is on a platform, returns the PLATFORM's Y-POSITION if so, -100 otherwise
+
+function isUnderAPlatform() {//detects if the cat is under a platform, returns the BOTTOM OF PLATFORM's Y-POSITION if so, -100 otherwise
+  var b = -100;
+  for (const plat of PLATFORMS) {
+    if (CAT.RECTANGLE.x +CAT.RECTANGLE.size > plat.xpt && CAT.RECTANGLE.x < plat.xpt + plat.xl && CAT.RECTANGLE.y >= plat.ypt +plat.yl -10 && CAT.RECTANGLE.y <= plat.ypt +plat.yl) {
+      b = plat.ypt + plat.yl;
+    }
+  }
+  return b;
+}
+
+function isRightOfAPlatform() { //detects if cat is directly to the right of a platform, returns TRUE if so, false otherwise
+  var b = false;
+  for (const plat of PLATFORMS) {
+    if (CAT.RECTANGLE.x > plat.xpt +plat.xl -10 && CAT.RECTANGLE.x <= plat.xpt + plat.xl && CAT.RECTANGLE.y + CAT.RECTANGLE.size > plat.ypt && CAT.RECTANGLE.y  < plat.ypt + plat.yl) {
+      b = true;
+    };
+  }
+  return b;
+}
+
+function isLeftOfAPlatform() {  //detects if cat is directly to the left of a platform, returns TRUE if so, false otherwise
+  var b = false;
+  for (const plat of PLATFORMS) {
+    if (CAT.RECTANGLE.x +CAT.RECTANGLE.size >= plat.xpt && CAT.RECTANGLE.x +CAT.RECTANGLE.size <= plat.xpt +10  && CAT.RECTANGLE.y +CAT.RECTANGLE.size> plat.ypt && CAT.RECTANGLE.y  < plat.ypt + plat.yl) {
+      b = true;
+    };
+  }
+  return b;
+}
+
+function attack() {
+  console.log(true);
+    for (var i = 0; i <NINJAS.length; i++){
+      if (NINJAS[i].x - RECTANGLE.x < 70 && NINJAS[i].x - RECTANGLE.x > 0){
+        ninja.hp -= 55;
+        console.log(ninja.hp);
+       }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
 
 function HandleSecondPlayerMovement (){
   if(!RECTANGLETWO.multiplayer)
@@ -106,10 +172,10 @@ function HandleSecondPlayerMovement (){
     }
 
     // if rectangleTwo is going off the left of the screen
-    if (RECTANGLETWO.x < -32) {
-      RECTANGLETWO.x = 1000;
-    } else if (RECTANGLETWO.x > 1000) {// if rectangleTwo goes past right boundary
-      RECTANGLETWO.x = -32;
+    if (RECTANGLETWO.x < 120) {
+      RECTANGLETWO.x = 120;
+    } else if (RECTANGLETWO.x > 820) {// if rectangleTwo goes past right boundary
+      RECTANGLETWO.x = 820;
     }
   }
   else{
@@ -138,10 +204,11 @@ function HandleSecondPlayerMovement (){
       RECTANGLETWO.y_velocity = 0;
     }
     // if rectangleTwo is going off the left of the screen
-    if (RECTANGLETWO.x < -32) {
+    if (RECTANGLETWO.x < -100) {
       RECTANGLETWO.x = 1000;
     } else if (RECTANGLETWO.x > 1000) {// if rectangleTwo goes past right boundary
       RECTANGLETWO.x = -32;
     }
   }
 }
+*/

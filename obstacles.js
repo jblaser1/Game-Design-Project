@@ -14,3 +14,23 @@ function initializeObstacle(){
     });
   }
 }
+
+
+function addPlatform(x, y, w, l){
+  PLATFORMS.push({xpt: x, ypt: y, xl: w, yl: l});
+}
+
+function addTempPlatform(x, y, w, l){
+  TEMPPLATFORMS.push({xpt: x, ypt: y, xl: w, yl: l});
+}
+
+
+function removeTempPlatforms(){
+  PLATFORMS = PLATFORMS.filter(function(objFromA) {
+  return !TEMPPLATFORMS.find(function(objFromB) {
+    return objFromA.xpt === objFromB.xpt && objFromA.ypt === objFromB.ypt && objFromA.xl === objFromB.xl && objFromA.yl === objFromB.yl
+  })
+})
+console.log(PLATFORMS)
+
+}
