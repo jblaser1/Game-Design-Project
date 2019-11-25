@@ -62,11 +62,13 @@ function loop(){
     drawHealthBar();
     context.font = "20px Arial";
     context.fillText("Score: " + score, 800, 75);
+    context.fillText("WASD - N to attack", 500, 75);
     RenderNinja(context);
   }
   else{
     context.font = "30px Arial";
     context.fillText("Game Over      You Lose", 300, 200);
+
   }
 
 
